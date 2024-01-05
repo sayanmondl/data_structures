@@ -1,0 +1,10 @@
+# vscode
+.vscode/
+
+# C
+*.exe
+*.out
+*.o
+
+# drawings
+*.excalidraw

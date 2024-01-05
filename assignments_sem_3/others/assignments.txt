@@ -1,0 +1,66 @@
+ASSIGNMENTS:-
+
+1. WACP to find Smallest among n number without using array.
+2. WACP to find Largest among n number without using array.
+3. WACP to find Largest and smallest among n number without using array.
+4. WACP to Sort n elements in ascending order.
+5. WACP to Sort n elements in descending order.
+6. WACP to Add two matrices.
+7. WACP to Subtract two matrices. 
+8. WACP to Multiply two matrices.
+9. WACP to Sort n words in lexicographic order.
+10. WACP to Sort students record.
+
+11. WACP GCD of n numbers using recursive procedure.
+12. WACP LCM of n numbers using recursive procedure.
+13. Write a procedure to add two matrices recursively.
+14. Merge-Sort Using Recursive
+
+15. WACP to Sort n number using Insertion Sort
+16. WACP to Sort n number using Selection Sort
+17. WACP to Sort n number using Shell Sort
+18. WACP to Sort n number using Quick Sort
+19. WACP to Merge three sorted arrays 
+
+20. WACP to 
+    (a) Create a Singly Linked List.
+    (b) Traverse.
+    (c) Insert node at Beginning, End or at any position.
+    (d) Delete a node from Beginning, End or at any position.
+    (e) Sort.
+
+21. Rewrite the Above Code using Doubly Linked List. 
+22. Rewrite the Above Code using Circular Linked List.
+23. Binary tree implementation:
+    (a) Insertion
+    (b) Deletion
+    (c) Traversal (preorder, postorder, inorder)
+
+24. preorder and inorder list is given. Make the binary tree.
+25. Binary Search tree implementation:
+    (a) Insertion
+    (b) Deletion
+    (c) Search
+
+25. Heap implementation (max heap & min heap):
+    (a) Insertion
+    (b) Deletion
+    (c) Heapify
+
+26. Heap sort(ascending) using maxheap.
+27. Heap sort(descending) using minheap.
+
+28. Stack implementation (using array & linked list):
+    (a) Push
+    (b) Pop
+    (c) Peek
+
+29. Queue implementation:
+    (a) Enqueue
+    (b) Dequeue
+
+30. Infix to postfix expression
+31. Tower of Hanoi:
+    (a) Move n discs from A to C using B
+
+32. WACP to calculate HCF and LCM recursively.
