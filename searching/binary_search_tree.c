@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "binary_search_tree.h"
+
+typedef struct Node {
+    int data;
+    struct Node *left;
+    struct Node *right;
+} Node;
+
+Node *create_node(int data);
+Node *insert(Node *root, int data);
+void inorder_traversal(Node *root);
+int search(Node *root, int el);
+Node *delete_node(Node *root, int el);
 
 int main() {
     int sequence[10] = { 80, 70, 40, 85, 90, 25, 100, 80, 75, 50 };
