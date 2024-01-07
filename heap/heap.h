@@ -16,6 +16,7 @@ Heap *create_heap();
 // Utils
 bool is_empty(Heap *heap);
 int get_size(Heap *heap);
+void display_heap(Heap *heap);
 void swap(int *a, int *b);
 
 // Inserts an element in the heap

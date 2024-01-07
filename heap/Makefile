@@ -1,14 +1,17 @@
 CC = gcc
+CFLAGS = -Wall -g
 DIR = build
-SOURCES = $(wildcard *.c)
-OBJECTS = $(patsubst %.c, $(DIR)/%.o, $(notdir $(SOURCES)))
-OUTPUT = heap.exe
 
-$(OUTPUT): $(OBJECTS)
-	$(CC) $^ -o $@ -g
+all: maxheap minheap
+
+maxheap: $(DIR)/heap.o $(DIR)/max_heap.o $(DIR)/heap_sort.o
+	$(CC) $(CFLAGS) $^ -o maxheap
+
+minheap: $(DIR)/heap.o $(DIR)/min_heap.o $(DIR)/heap_sort.o
+	$(CC) $(CFLAGS) $^ -o minheap
 
 $(DIR)/%.o: %.c
-	$(CC) -c $^ -o $@ -g
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(DIR)/* $(OUTPUT)
+	rm -f $(DIR)/*.o maxheap minheap

@@ -65,31 +65,22 @@ void delete(Heap *heap, int index) {
 
 int main() {
     int arr[11] = { 75, 45, 34, 29, 44, 31, 19, 3, 17, 25, 54 };
-    Heap *heap = heapify(arr, 11);
+    Heap *maxheap = heapify(arr, 11);
 
-    insert(heap, 12);
-    insert(heap, 46);
-    insert(heap, 16);
-    insert(heap, 59);
-    insert(heap, 5);
-    insert(heap, 64);
+    insert(maxheap, 12);
+    insert(maxheap, 46);
+    insert(maxheap, 16);
+    insert(maxheap, 59);
+    insert(maxheap, 5);
+    insert(maxheap, 64);
 
-    for (int i = 0; i < heap->size; i++) {
-        printf("%d ", heap->arr[i]);
-    }
-    printf("\n");
+    display_heap(maxheap);
 
-    heap_sort_ascending(heap);
-    printf("sorted:");
-    for (int i = 0; i < heap->size; i++) {
-        printf("%d ", heap->arr[i]);
-    }
-    printf("\n");
+    heap_sort_ascending(maxheap);
+    display_heap(maxheap);
 
-    delete(heap, 7);
-    for (int i = 0; i < heap->size; i++) {
-        printf("%d ", heap->arr[i]);
-    }
-    printf("\n");
+    delete(maxheap, 7);
+    display_heap(maxheap);
+
     return 0;
 }

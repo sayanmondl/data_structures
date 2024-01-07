@@ -29,6 +29,13 @@ bool is_empty(Heap *heap) { return (heap->size == 0); }
 
 int get_size(Heap *heap) { return heap->size; }
 
+void display_heap(Heap *heap) {
+    for (int i = 0; i < heap->size; i++) {
+        printf("%d  ", heap->arr[i]);
+    }
+    printf("\n");
+}
+
 void swap(int *a, int *b) {
     int temp = *a;
     *a = *b;
