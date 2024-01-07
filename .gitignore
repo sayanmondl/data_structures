@@ -8,3 +8,6 @@
 
 # drawings
 *.excalidraw
+
+# ascii table
+ascii.txt
