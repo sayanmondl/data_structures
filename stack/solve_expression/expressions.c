@@ -16,24 +16,24 @@ int precedence(char op) {
 
 char *infix_to_postfix(char *infix) {
     Stack stk = create_stack();
-    char *postfix = (char *)malloc((strlen(infix) + 1) * sizeof(char));
+    char *prefix = (char *)malloc((strlen(infix) + 1) * sizeof(char));
     int j = 0;
 
     for (int i = 0; infix[i] != '\0'; i++) {
         if (is_operand(infix[i])) {
-            postfix[j] = infix[i];
+            prefix[j] = infix[i];
             j++;
         } else if (infix[i] == '(') {
             push(&stk, infix[i]);
         } else if (infix[i] == ')') {
             while (!is_empty(&stk) && top(&stk) != '(') {
-                postfix[j] = pop(&stk);
+                prefix[j] = pop(&stk);
                 j++;
             }
             pop(&stk);
         } else {
             while (!is_empty(&stk) && precedence(top(&stk)) >= precedence(infix[i])) {
-                postfix[j] = pop(&stk);
+                prefix[j] = pop(&stk);
                 j++;
             }
             push(&stk, infix[i]);
@@ -41,11 +41,11 @@ char *infix_to_postfix(char *infix) {
     }
 
     while (!is_empty(&stk)) {
-        postfix[j] = pop(&stk);
+        prefix[j] = pop(&stk);
         j++;
     }
-    postfix[j] = '\0';
-    return postfix;
+    prefix[j] = '\0';
+    return prefix;
 }
 
 char *reverse_str(char *exp) {
@@ -77,13 +77,48 @@ char *infix_to_prefix(char *infix) {
     return prefix;
 }
 
-int evaluate_postfix(char *postfix) {
+int evaluate_postfix(char *prefix) {
     Stack stk = create_stack();
-    for (int i = 0; postfix[i] != '\0'; i++) {
-        if (is_operand(postfix[i])) {
-            push(&stk, postfix[i] - 48);
+
+    for (int i = 0; prefix[i] != '\0'; i++) {
+        if (is_operand(prefix[i])) {
+            push(&stk, prefix[i] - 48);
         } else {
-            char operator = postfix[i];
+            char operator = prefix[i];
+            int operand1 = pop(&stk);
+            int operand2 = pop(&stk);
+
+            switch (operator) {
+                case '+':
+                    push(&stk, operand1 + operand2);
+                    break;
+                case '-':
+                    push(&stk, operand1 - operand2);
+                    break;
+                case '*':
+                    push(&stk, operand1 * operand2);
+                    break;
+                case '/':
+                    push(&stk, operand1 / operand2);
+                    break;
+                default:
+                    printf("Invalid!");
+                    break;
+            }
+        }
+    }
+    return pop(&stk);
+}
+
+int evaluate_prefix(char *prefix) {
+    Stack stk = create_stack();
+    int len = strlen(prefix);
+
+    for (int i = len - 1; i >= 0; i--) {
+        if (is_operand(prefix[i])) {
+            push(&stk, prefix[i] - 48);
+        } else {
+            char operator = prefix[i];
             int operand1 = pop(&stk);
             int operand2 = pop(&stk);
 
