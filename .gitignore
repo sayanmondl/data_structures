@@ -6,6 +6,9 @@
 *.out
 *.o
 
+# formatter
+.clang-format
+
 # drawings
 *.excalidraw
 
